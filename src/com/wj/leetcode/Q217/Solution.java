@@ -1,6 +1,6 @@
 package com.wj.leetcode.Q217;
 
-public class Solution {
+class Solution {
     public boolean containsDuplicate(int[] nums) {
         if ( null == nums || nums.length <= 1 ) return false;
         for (int i = 0; i < nums.length - 1; i++){

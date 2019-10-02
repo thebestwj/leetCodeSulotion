@@ -1,14 +1,26 @@
 package com.wj.leetcode;
 
-import com.wj.leetcode.Q26.SolutionB;
+import com.wj.leetcode.Q48.Solution;
 
 public class Main {
 
-    private static SolutionB solution;
+    private static Solution solution = new Solution();
 
     public static void main(String[] args) {
 	// write your code here
-        solution = new SolutionB();
-        System.out.println(solution.removeDuplicates(new int[]{1,2,2,3,3,3,4,4,4}));
+        int[][] m = new int[3][3];
+        for (int i = 0; i < 9;i++){
+            m[i/3][i%3] = i;
+        }
+        solution.rotate(m);
+        for (int i = 0; i < 9;i++){
+            System.out.println(m[i/3][i%3]);
+        }
+    }
+
+    private static  void swap(int[] nums,int a,int b){
+        int temp = nums[a];
+        nums[a] = nums[b];
+        nums[b] = temp;
     }
 }

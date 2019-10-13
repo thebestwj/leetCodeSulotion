@@ -18,14 +18,20 @@ public class SolutionB {
                 count ++;
                 i++;
                 if (i == up.length()){
-                    i--;
-                    break;
+                    stringBuilder.append(count);
+                    stringBuilder.append(now);
+                    return stringBuilder.toString();
                 }
             }
             //TODO
             stringBuilder.append(count);
             stringBuilder.append(now);
             now = up.charAt(i);
+            if (i==up.length()-1){
+                stringBuilder.append("1");
+                stringBuilder.append(now);
+                break;
+            }
         }
         return stringBuilder.toString();
     }

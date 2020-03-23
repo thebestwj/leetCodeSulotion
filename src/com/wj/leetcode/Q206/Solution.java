@@ -5,15 +5,20 @@ package com.wj.leetcode.Q206;
  *
  * @author thebestwj
  */
-public class Solution {
+public class Solution {  //双指针迭代
+
     public ListNode reverseList(ListNode head) {
-        return head;
+        ListNode pre = null;
+        ListNode cur = head;
+        while(cur.next !=null){
+            ListNode t = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = t;
+        }
+        cur.next = pre;
+        return cur;
     }
 }
 
-//Definition for singly-linked list.
-class ListNode {
-     int val;
-     ListNode next;
-     ListNode(int x) { val = x; }
-}
+
